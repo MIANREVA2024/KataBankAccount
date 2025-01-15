@@ -58,7 +58,7 @@ public class CuentaBancaria {
     }
 
     //Creando metodo para restar comision
-    private void restarComisionMensual() {
+    protected void restarComisionMensual() {
         saldo -= comisionMensual;
         if (saldo < 0) saldo = 0;
         System.out.println("Comision mensual restada. Saldo actual:" + saldo);
