@@ -7,29 +7,34 @@ import static org.junit.jupiter.api.Assertions.*;
 class CuentaAhorrosTest {
     private CuentaAhorros cuentaAhorros;
 
-   @BeforeEach
-   void inicio(){
-       //Given: debe inicializar con los atributos saldo y tasa anual
-       cuentaAhorros = new CuentaAhorros(12000, 5);
-   }
-
-    @Test
-    void consignar() {
+    @BeforeEach
+    void inicio() {
+        //Given: debe inicializar con los atributos saldo inicial  y tasa anual
+        cuentaAhorros = new CuentaAhorros(12000, 5);
     }
 
     @Test
-    void retirar() {
+    void testCuentaActivaAlCrear() {
+        boolean activa = cuentaAhorros.estaActiva();
+        assertTrue(activa, "La cuenta debe estar activa con saldo inicial >= 10000");
     }
 
     @Test
-    void extractoMensual() {
+    void testConsignarEnCuentaActiva() {
+
+        cuentaAhorros.consignar(3000);
+
+        assertEquals(15000, cuentaAhorros.getSaldo(), "El saldo deberia ssr 15000");
     }
 
     @Test
-    void imprimir() {
+    void testRetirarEnCuentaActiva() {
+
+        //When: se retirara 5000
+        cuentaAhorros.retirar(5000);
+
+        //Then: el saldo debe disminuir
+        assertEquals(7000, cuentaAhorros.getSaldo(), "El saldo deberia ser 7000");
     }
 
-    @Test
-    void estaActiva() {
     }
-}

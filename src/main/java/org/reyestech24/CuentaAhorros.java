@@ -40,7 +40,7 @@ public class CuentaAhorros extends CuentaBancaria{
     public String imprimir() {
         return super.imprimir() + "\n" + "Estado de la cuenta:" + (estaActiva? "Activa" : "Inactiva");
     }
-    public boolean EstaActiva (){
+    public boolean estaActiva (){
         return saldo >= 10000;
     }
 }

@@ -108,15 +108,12 @@ class CuentaBancariaTest {
         //Then: El saldo debe mostrar la deduccion de la comision y el interes mensual que se aplico.
         assertEquals(saldoNuevo, cuentaBancaria.getSaldo(), 0.01, "El saldo debe mostrar la comision y el interes mensual");
     }
+
     /*
     @Test
-    void restarComisionMensual() {
-    }
-     */
-
-    @Test
-    void testImprimirEstadoDeCuenta() {
+    void testImprimirEstadoDeCuentaBancaria() {
         //Given: una cuenta con saldo inicial de 10000 y tasa de 4% anual
+        CuentaBancaria cuentaBancaria1
 
         //When: Se imprime el estado de cuenta
         String estado = cuentaBancaria.imprimir();
@@ -125,4 +122,6 @@ class CuentaBancariaTest {
         assertTrue(estado.contains("Saldo: 10000"),"El estado deberia mostrar el saldo correcto");
         assertTrue(estado.contains("Tasa anual: 4.0%"),"El estado deberia mostrar la tasa anualcorrecta");
     }
+     */
+
 }
