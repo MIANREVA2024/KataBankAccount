@@ -1,11 +1,43 @@
-@startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+@startuml UMLKataBank
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+' Definir la clase base CuentaBancaria
+class CuentaBancaria {
+    - saldo: double
+    - tasaAnual: double
+    - numeroRetiros: int
+    - numeroConsignaciones: int
+    - comisionMensual: double
+    --
+    + consignar(monto: double): void
+    + retirar(monto: double): void
+    + calcularInteresMensual(): void
+    + extractoMensual(): void
+    + imprimir(): String
+}
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+' Definir la clase derivada CuentaAhorros
+class CuentaAhorros {
+    - activa: boolean
+    --
+    + retirar(monto: double): void
+    + consignar(monto: double): void
+    + extractoMensual(): void
+    + imprimir(): String
+}
+
+' Definir la clase derivada CuentaCorriente
+class CuentaCorriente {
+    - sobregiro: double
+    --
+    + retirar(monto: double): void
+    + consignar(monto: double): void
+    + extractoMensual(): void
+    + imprimir(): String
+}
+
+' Relaciones entre clases
+CuentaAhorros --|> CuentaBancaria
+CuentaCorriente --|> CuentaBancaria
+
 @enduml
