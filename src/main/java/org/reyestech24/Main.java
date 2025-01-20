@@ -8,9 +8,7 @@ public class Main {
         //crearemos la cuenta de ahorros con saldo mayor a lo solicitado (10000) que sera 12000
         CuentaAhorros cuentaAhorros = new CuentaAhorros(12000, 5);
 
-
         //Probaremos nuestros metodos
-
         cuentaAhorros.consignar(500);
         cuentaAhorros.retirar(200);
         cuentaAhorros.extractoMensual();
@@ -22,6 +20,6 @@ public class Main {
         cuentaCorriente.consignar(300);
         cuentaCorriente.extractoMensual();
         System.out.println(cuentaCorriente.imprimir());
-
+        System.out.println("hola mundo");
     }
 }
